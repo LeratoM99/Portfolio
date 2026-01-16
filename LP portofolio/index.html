@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width,intial-scale=1.0">
+       <link rel="stylesheet"href="css style">
+        <title>LP Portfolio</title>
+        <style>
+/* RESET */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* HEADER & NAV */
+header {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* SECTIONS */
+section {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    color: #333;
+}
+
+/* HERO */
+#home {
+    background-color: #f4f4f4;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* BUTTON */
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* PROJECT CARDS */
+.project {
+    background-color: #eee;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* CONTACT FORM */
+form {
+    margin-top: 20px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+.project a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.project a:hover{
+    text-decoration: underline;
+}
+
+/* FADE-IN ANIMATION */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* PROJECT HOVER EFFECT */
+.project {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* DARK MODE */
+body.dark {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark header {
+    background-color: #000;
+}
+
+body.dark section {
+    background-color: #1e1e1e;
+}
+
+body.dark h2 {
+    color: #fff;
+}
+
+body.dark nav ul li a {
+    color: #fff;
+}
+
+body.dark .project {
+    background-color: #2a2a2a;
+}
+
+body.dark button {
+    background-color: #444;
+}
+
+
+</style>
+    </head>
+    <body>
+        <!--  HEADER -->
+        <header>
+            <nav>
+                <h1>Lerato Motaung</h1>
+                <p>GitHub:<a href="https://github.com/yourusername" target="_blank">LeratoM</a></p>
+                <ul>
+                   <li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+
+
+                </ul>
+            </nav>
+
+            <button id="themeToggle">🌙 Dark Mode</button>
+
+        </header>
+        <!-- HERO SECTION -->
+        <section id="Home";>
+            <h2>Hi, I'm Lerato Motaung</h2>
+            <p>Beginning Front End Development</p>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am doing front end development using HTML, CSS, JavaScript</p>
+        </section>
+        <!--PROJECTS SECTION-->
+        <section id="projects">
+            <h2>My Projects</h2>
+    
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>My personal portfolio built using HTML, CSS and JavaScript</p>
+                <a href="#" target="_blank">Live Demo</a>
+                <a href="#" target="_blank">Github Code</a>
+            </div>
+            <div>
+                <div class="project">
+                    <h3>To-Do List</h3>
+                    <p>A JavaScript app to manage daily tasks</p>
+                    <a href="#" target="_blank">Live Demo</a>
+                    <a href="#" target="_blank">Github Code</a>
+
+            </div>
+        
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form>
+                <input type="text" placeholder="Your name" required>
+                <br><br>
+
+                <input type="email" placeholder="Your email" required>
+                <br><br>
+
+                <textarea placeholder="Your Message"></textarea>
+                <br><br>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <script>
+const button = document.querySelector("#home button");
+
+button.addEventListener("click", function () {
+    document.querySelector("#projects").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
+// Smooth scroll button
+const button = document.querySelector("#home button");
+
+button.addEventListener("click", function () {
+    document.querySelector("#projects").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
+// Fade-in sections on scroll
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        toggleBtn.textContent = "☀️ Light Mode";
+    } else {
+        toggleBtn.textContent = "🌙 Dark Mode";
+    }
+});
+
+
+</script>
+
+    </body>
+
+</html>
